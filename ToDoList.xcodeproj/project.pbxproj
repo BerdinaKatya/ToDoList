@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		6425D6A12B63B61C0028F3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6A02B63B61C0028F3A3 /* AppDelegate.swift */; };
 		6425D6A32B63B61C0028F3A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6A22B63B61C0028F3A3 /* SceneDelegate.swift */; };
-		6425D6A52B63B61C0028F3A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6A42B63B61C0028F3A3 /* ViewController.swift */; };
 		6425D6A82B63B61C0028F3A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6425D6A62B63B61C0028F3A3 /* Main.storyboard */; };
 		6425D6AA2B63B6210028F3A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6425D6A92B63B6210028F3A3 /* Assets.xcassets */; };
 		6425D6AD2B63B6210028F3A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6425D6AB2B63B6210028F3A3 /* LaunchScreen.storyboard */; };
+		6425D6BB2B63BAF40028F3A3 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6BA2B63BAF40028F3A3 /* ToDoListTableViewController.swift */; };
+		6425D6BD2B63BB6B0028F3A3 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6BC2B63BB6B0028F3A3 /* TasksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6425D69D2B63B61C0028F3A3 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6425D6A02B63B61C0028F3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6425D6A22B63B61C0028F3A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6425D6A42B63B61C0028F3A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6425D6A72B63B61C0028F3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6425D6A92B63B6210028F3A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6425D6AC2B63B6210028F3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6425D6AE2B63B6210028F3A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6425D6BA2B63BAF40028F3A3 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
+		6425D6BC2B63BB6B0028F3A3 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		6425D69F2B63B61C0028F3A3 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				6425D6A02B63B61C0028F3A3 /* AppDelegate.swift */,
-				6425D6A22B63B61C0028F3A3 /* SceneDelegate.swift */,
-				6425D6A42B63B61C0028F3A3 /* ViewController.swift */,
-				6425D6A62B63B61C0028F3A3 /* Main.storyboard */,
+				6425D6B52B63BA010028F3A3 /* App */,
+				6425D6B42B63B9770028F3A3 /* Storyboards */,
+				6425D6B62B63BA310028F3A3 /* ViewControllers */,
+				6425D6B82B63BA500028F3A3 /* Services */,
+				6425D6B72B63BA480028F3A3 /* Models */,
 				6425D6A92B63B6210028F3A3 /* Assets.xcassets */,
-				6425D6AB2B63B6210028F3A3 /* LaunchScreen.storyboard */,
 				6425D6AE2B63B6210028F3A3 /* Info.plist */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		6425D6B42B63B9770028F3A3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6425D6A62B63B61C0028F3A3 /* Main.storyboard */,
+				6425D6AB2B63B6210028F3A3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6425D6B52B63BA010028F3A3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6425D6A22B63B61C0028F3A3 /* SceneDelegate.swift */,
+				6425D6A02B63B61C0028F3A3 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6425D6B62B63BA310028F3A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6425D6BA2B63BAF40028F3A3 /* ToDoListTableViewController.swift */,
+				6425D6BC2B63BB6B0028F3A3 /* TasksTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6425D6B72B63BA480028F3A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6425D6B82B63BA500028F3A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6425D6A52B63B61C0028F3A3 /* ViewController.swift in Sources */,
 				6425D6A12B63B61C0028F3A3 /* AppDelegate.swift in Sources */,
 				6425D6A32B63B61C0028F3A3 /* SceneDelegate.swift in Sources */,
+				6425D6BD2B63BB6B0028F3A3 /* TasksTableViewController.swift in Sources */,
+				6425D6BB2B63BAF40028F3A3 /* ToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +342,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +351,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berdinak.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,8 +373,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +382,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berdinak.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

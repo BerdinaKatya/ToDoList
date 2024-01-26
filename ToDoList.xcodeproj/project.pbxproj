@@ -14,6 +14,10 @@
 		6425D6AD2B63B6210028F3A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6425D6AB2B63B6210028F3A3 /* LaunchScreen.storyboard */; };
 		6425D6BB2B63BAF40028F3A3 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6BA2B63BAF40028F3A3 /* ToDoListTableViewController.swift */; };
 		6425D6BD2B63BB6B0028F3A3 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6BC2B63BB6B0028F3A3 /* TasksTableViewController.swift */; };
+		6425D6BF2B63BC850028F3A3 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6BE2B63BC850028F3A3 /* StorageManager.swift */; };
+		6425D6C12B63BD530028F3A3 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6C02B63BD530028F3A3 /* TaskList.swift */; };
+		6425D6C32B63BED20028F3A3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6C22B63BED20028F3A3 /* DataManager.swift */; };
+		6425D6C62B63C3DD0028F3A3 /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6425D6C52B63C3DD0028F3A3 /* AlertControllerBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		6425D6AE2B63B6210028F3A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6425D6BA2B63BAF40028F3A3 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		6425D6BC2B63BB6B0028F3A3 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		6425D6BE2B63BC850028F3A3 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		6425D6C02B63BD530028F3A3 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		6425D6C22B63BED20028F3A3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6425D6C52B63C3DD0028F3A3 /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 				6425D6B62B63BA310028F3A3 /* ViewControllers */,
 				6425D6B82B63BA500028F3A3 /* Services */,
 				6425D6B72B63BA480028F3A3 /* Models */,
+				6425D6C42B63C3BA0028F3A3 /* Factories */,
 				6425D6A92B63B6210028F3A3 /* Assets.xcassets */,
 				6425D6AE2B63B6210028F3A3 /* Info.plist */,
 			);
@@ -99,6 +108,7 @@
 		6425D6B72B63BA480028F3A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6425D6C02B63BD530028F3A3 /* TaskList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,8 +116,18 @@
 		6425D6B82B63BA500028F3A3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6425D6BE2B63BC850028F3A3 /* StorageManager.swift */,
+				6425D6C22B63BED20028F3A3 /* DataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		6425D6C42B63C3BA0028F3A3 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				6425D6C52B63C3DD0028F3A3 /* AlertControllerBuilder.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,8 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6425D6C12B63BD530028F3A3 /* TaskList.swift in Sources */,
 				6425D6A12B63B61C0028F3A3 /* AppDelegate.swift in Sources */,
+				6425D6C62B63C3DD0028F3A3 /* AlertControllerBuilder.swift in Sources */,
 				6425D6A32B63B61C0028F3A3 /* SceneDelegate.swift in Sources */,
+				6425D6C32B63BED20028F3A3 /* DataManager.swift in Sources */,
+				6425D6BF2B63BC850028F3A3 /* StorageManager.swift in Sources */,
 				6425D6BD2B63BB6B0028F3A3 /* TasksTableViewController.swift in Sources */,
 				6425D6BB2B63BAF40028F3A3 /* ToDoListTableViewController.swift in Sources */,
 			);

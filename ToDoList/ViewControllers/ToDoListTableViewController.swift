@@ -11,6 +11,7 @@ class ToDoListTableViewController: UITableViewController {
     
     private var taskLists: [TaskList]!
     private let storageManager = StorageManager.shared
+    private var dataManager = DataManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class ToDoListTableViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        
         
         taskLists = storageManager.fetchToDoList()
     }
@@ -93,6 +96,15 @@ class ToDoListTableViewController: UITableViewController {
     
     @objc private func addButtonPressed() {
         showAlert()
+    }
+    
+    private func createTempData() {
+        if !UserDefaults.standard.bool(forKey: "done") {
+            dataManager.createTempData { [unowned self] in
+                UserDefaults.standard.setValue(true, forKey: "done")
+                tableView.reloadData()
+            }
+        }
     }
 }
 

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ToDoListTableViewController: UITableViewController {
     
-    private var taskLists: [TaskList]!
+    private var taskLists: Results<TaskList>!
     private let storageManager = StorageManager.shared
     private var dataManager = DataManager.shared
 
@@ -25,9 +26,14 @@ class ToDoListTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         navigationItem.leftBarButtonItem = editButtonItem
         
+        createTempData()
+        taskLists = storageManager.fetchData(TaskList.self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
-        taskLists = storageManager.fetchToDoList()
+        tableView.reloadData()
     }
 
     // MARK: - TableViewDataSource
@@ -54,8 +60,8 @@ class ToDoListTableViewController: UITableViewController {
         let taskList = taskLists[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _, _, _ in
-            tableView.deleteRows(at: [indexPath], with: .automatic)
             storageManager.delete(taskList)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, isDone in
@@ -135,6 +141,9 @@ extension ToDoListTableViewController {
     }
     
     private func save(taskList: String) {
-        
+        storageManager.save(taskList) { taskList in
+            let rowIndex = IndexPath(row: taskLists.index(of: taskList) ?? 0, section: 0)
+            tableView.insertRows(at: [rowIndex], with: .automatic)
+        }
     }
 }

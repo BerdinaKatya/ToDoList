@@ -16,7 +16,7 @@ final class TaskList: Object {
 
 final class Task: Object {
     @Persisted var title = ""
-    @Persisted var date = Date()
     @Persisted var note = ""
+    @Persisted var date = Date()
     @Persisted var isComplete = false
 }

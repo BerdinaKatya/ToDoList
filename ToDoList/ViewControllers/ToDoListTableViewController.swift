@@ -11,6 +11,8 @@ import RealmSwift
 class ToDoListTableViewController: UITableViewController {
     
     private var taskLists: Results<TaskList>!
+    private var currentTasks: Results<Task>!
+    private var completedTasks: Results<Task>!
     private let storageManager = StorageManager.shared
     private var dataManager = DataManager.shared
 
@@ -49,8 +51,26 @@ class ToDoListTableViewController: UITableViewController {
         let taskList = taskLists[indexPath.row]
         content.text = taskList.title
         content.secondaryText = taskList.tasks.count.formatted()
-        cell.contentConfiguration = content
+        
+        var completedTasks: [Task] = []
+        
+        taskList.tasks.forEach { completedTask in
+            if completedTask.isComplete {
+                completedTasks.append(completedTask)
+            }
+        }
+        
+        if completedTasks.count != taskList.tasks.count {
+            content.secondaryText = "\(taskList.tasks.count - completedTasks.count)"
+        } else if completedTasks.count == 0 && taskList.tasks.count == 0 {
+            content.secondaryText = "0"
+        }
+        
+        cell.accessoryType = completedTasks.count == taskList.tasks.count && taskList.tasks.count > 0
+        ? .checkmark
+        : .none
 
+        cell.contentConfiguration = content
         return cell
     }
     
@@ -78,7 +98,7 @@ class ToDoListTableViewController: UITableViewController {
         }
         
         editAction.backgroundColor = .orange
-        editAction.backgroundColor = .green
+        doneAction.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         
         return UISwipeActionsConfiguration(actions: [doneAction, editAction, deleteAction])
     }
@@ -95,7 +115,11 @@ class ToDoListTableViewController: UITableViewController {
     // MARK: - IBActions
     
     @IBAction func sortingList(_ sender: UISegmentedControl) {
+        taskLists = sender.selectedSegmentIndex == 0
+        ? taskLists.sorted(byKeyPath: "date")
+        : taskLists.sorted(byKeyPath: "title")
         
+        tableView.reloadData()
     }
     
     // MARK: - OtherMethods
